@@ -30,4 +30,16 @@ class PostAddMessageRequest extends FormRequest
             'content' => 'required|min:50',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'required' => 'Ce champ est obligatoire',
+            'content.min' => 'Ce champ doit contenir au minimum 50 caractères',
+            'first_name.min' => 'Ce champ doit contenir au minimum 2 caractères',
+            'last_name.min' => 'Ce champ doit contenir au minimum 2 caractères',
+            'max' => 'Ce champ doit contenir 2 caractères minimum, 60 maximum',
+            'email' => 'Un email valide est requis',
+        ];
+    }
 }
