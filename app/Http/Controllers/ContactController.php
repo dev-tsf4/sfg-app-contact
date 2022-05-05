@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostAddMessageRequest;
+use App\Http\Requests\MessageRequest;
 use App\Mail\ContactMail;
 use App\Models\Message;
 use Illuminate\Support\Facades\Mail;
@@ -14,7 +14,7 @@ class ContactController extends Controller
         return view('add');
     }
 
-    public function postAdd(PostAddMessageRequest $request)
+    public function postAdd(MessageRequest $request)
     {
         Message::create($request->validated());
 
